@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		B450500F2D1D47D700862B40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4504FF62D1D47D100862B40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4504FFD2D1D47D100862B40;
+			remoteInfo = "furniture-ecomm-app";
+		};
+		B45050192D1D47D700862B40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4504FF62D1D47D100862B40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4504FFD2D1D47D100862B40;
+			remoteInfo = "furniture-ecomm-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B4504FFE2D1D47D100862B40 /* furniture-ecomm-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "furniture-ecomm-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B450500E2D1D47D700862B40 /* furniture-ecomm-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "furniture-ecomm-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B45050182D1D47D700862B40 /* furniture-ecomm-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "furniture-ecomm-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B45050002D1D47D100862B40 /* furniture-ecomm-app */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "furniture-ecomm-app";
+			sourceTree = "<group>";
+		};
+		B45050112D1D47D700862B40 /* furniture-ecomm-appTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "furniture-ecomm-appTests";
+			sourceTree = "<group>";
+		};
+		B450501B2D1D47D700862B40 /* furniture-ecomm-appUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "furniture-ecomm-appUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4504FFB2D1D47D100862B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B450500B2D1D47D700862B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B45050152D1D47D700862B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4504FF52D1D47D100862B40 = {
+			isa = PBXGroup;
+			children = (
+				B45050002D1D47D100862B40 /* furniture-ecomm-app */,
+				B45050112D1D47D700862B40 /* furniture-ecomm-appTests */,
+				B450501B2D1D47D700862B40 /* furniture-ecomm-appUITests */,
+				B4504FFF2D1D47D100862B40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4504FFF2D1D47D100862B40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4504FFE2D1D47D100862B40 /* furniture-ecomm-app.app */,
+				B450500E2D1D47D700862B40 /* furniture-ecomm-appTests.xctest */,
+				B45050182D1D47D700862B40 /* furniture-ecomm-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4504FFD2D1D47D100862B40 /* furniture-ecomm-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B45050222D1D47D700862B40 /* Build configuration list for PBXNativeTarget "furniture-ecomm-app" */;
+			buildPhases = (
+				B4504FFA2D1D47D100862B40 /* Sources */,
+				B4504FFB2D1D47D100862B40 /* Frameworks */,
+				B4504FFC2D1D47D100862B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B45050002D1D47D100862B40 /* furniture-ecomm-app */,
+			);
+			name = "furniture-ecomm-app";
+			packageProductDependencies = (
+			);
+			productName = "furniture-ecomm-app";
+			productReference = B4504FFE2D1D47D100862B40 /* furniture-ecomm-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B450500D2D1D47D700862B40 /* furniture-ecomm-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B45050252D1D47D700862B40 /* Build configuration list for PBXNativeTarget "furniture-ecomm-appTests" */;
+			buildPhases = (
+				B450500A2D1D47D700862B40 /* Sources */,
+				B450500B2D1D47D700862B40 /* Frameworks */,
+				B450500C2D1D47D700862B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B45050102D1D47D700862B40 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B45050112D1D47D700862B40 /* furniture-ecomm-appTests */,
+			);
+			name = "furniture-ecomm-appTests";
+			packageProductDependencies = (
+			);
+			productName = "furniture-ecomm-appTests";
+			productReference = B450500E2D1D47D700862B40 /* furniture-ecomm-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B45050172D1D47D700862B40 /* furniture-ecomm-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B45050282D1D47D700862B40 /* Build configuration list for PBXNativeTarget "furniture-ecomm-appUITests" */;
+			buildPhases = (
+				B45050142D1D47D700862B40 /* Sources */,
+				B45050152D1D47D700862B40 /* Frameworks */,
+				B45050162D1D47D700862B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B450501A2D1D47D700862B40 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B450501B2D1D47D700862B40 /* furniture-ecomm-appUITests */,
+			);
+			name = "furniture-ecomm-appUITests";
+			packageProductDependencies = (
+			);
+			productName = "furniture-ecomm-appUITests";
+			productReference = B45050182D1D47D700862B40 /* furniture-ecomm-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4504FF62D1D47D100862B40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					B4504FFD2D1D47D100862B40 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					B450500D2D1D47D700862B40 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B4504FFD2D1D47D100862B40;
+					};
+					B45050172D1D47D700862B40 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B4504FFD2D1D47D100862B40;
+					};
+				};
+			};
+			buildConfigurationList = B4504FF92D1D47D100862B40 /* Build configuration list for PBXProject "furniture-ecomm-app" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4504FF52D1D47D100862B40;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B4504FFF2D1D47D100862B40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4504FFD2D1D47D100862B40 /* furniture-ecomm-app */,
+				B450500D2D1D47D700862B40 /* furniture-ecomm-appTests */,
+				B45050172D1D47D700862B40 /* furniture-ecomm-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4504FFC2D1D47D100862B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B450500C2D1D47D700862B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B45050162D1D47D700862B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4504FFA2D1D47D100862B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B450500A2D1D47D700862B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B45050142D1D47D700862B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B45050102D1D47D700862B40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4504FFD2D1D47D100862B40 /* furniture-ecomm-app */;
+			targetProxy = B450500F2D1D47D700862B40 /* PBXContainerItemProxy */;
+		};
+		B450501A2D1D47D700862B40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4504FFD2D1D47D100862B40 /* furniture-ecomm-app */;
+			targetProxy = B45050192D1D47D700862B40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B45050202D1D47D700862B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B45050212D1D47D700862B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B45050232D1D47D700862B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"furniture-ecomm-app/Preview Content\"";
+				DEVELOPMENT_TEAM = ZJUQAVTLY7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergioherrera.furniture-ecomm-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B45050242D1D47D700862B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"furniture-ecomm-app/Preview Content\"";
+				DEVELOPMENT_TEAM = ZJUQAVTLY7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergioherrera.furniture-ecomm-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B45050262D1D47D700862B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJUQAVTLY7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergioherrera.furniture-ecomm-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/furniture-ecomm-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/furniture-ecomm-app";
+			};
+			name = Debug;
+		};
+		B45050272D1D47D700862B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJUQAVTLY7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergioherrera.furniture-ecomm-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/furniture-ecomm-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/furniture-ecomm-app";
+			};
+			name = Release;
+		};
+		B45050292D1D47D700862B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJUQAVTLY7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergioherrera.furniture-ecomm-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "furniture-ecomm-app";
+			};
+			name = Debug;
+		};
+		B450502A2D1D47D700862B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJUQAVTLY7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sergioherrera.furniture-ecomm-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "furniture-ecomm-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4504FF92D1D47D100862B40 /* Build configuration list for PBXProject "furniture-ecomm-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B45050202D1D47D700862B40 /* Debug */,
+				B45050212D1D47D700862B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B45050222D1D47D700862B40 /* Build configuration list for PBXNativeTarget "furniture-ecomm-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B45050232D1D47D700862B40 /* Debug */,
+				B45050242D1D47D700862B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B45050252D1D47D700862B40 /* Build configuration list for PBXNativeTarget "furniture-ecomm-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B45050262D1D47D700862B40 /* Debug */,
+				B45050272D1D47D700862B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B45050282D1D47D700862B40 /* Build configuration list for PBXNativeTarget "furniture-ecomm-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B45050292D1D47D700862B40 /* Debug */,
+				B450502A2D1D47D700862B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4504FF62D1D47D100862B40 /* Project object */;
+}
