@@ -8,11 +8,50 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @EnvironmentObject var cartManager: CartManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack(alignment: .top) {
+                Color.white.ignoresSafeArea(.all)
+                
+                VStack(spacing: 20) {
+                    AppBar()
+                    SearchBar()
+                    ImageSlider()
+                    
+                    HStack {
+                        Text("New Arrivals")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "circle.grid.2x2.fill")
+                            .foregroundStyle(Color("kPrimary"))
+                    }
+                    
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 10) {
+                            ForEach(productList, id: \.id) { product in
+                                NavigationLink {
+                                    Text(product.name)
+                                } label: {
+                                    ProductCard(product: product)
+                                        .environmentObject(cartManager)
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .padding(.horizontal, 20)
+            }
+        }
     }
 }
 
 #Preview {
     HomeScreen()
+        .environmentObject(CartManager())
 }
