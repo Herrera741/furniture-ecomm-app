@@ -8,11 +8,51 @@
 import SwiftUI
 
 struct ProductCardView: View {
+    @EnvironmentObject var cartManager: CartManager
+    var product: Product
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color("kSecondary")
+            
+            ZStack(alignment: .bottomTrailing) {
+                VStack(alignment: .leading) {
+                    Image(product.image)
+                        .resizable()
+                        .frame(width: 170, height: 160)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                    Text(product.name)
+                        .font(.headline)
+                        .padding(.vertical, 1.5)
+                    
+                    Text(product.supplier)
+                        .font(.caption)
+                        .foregroundStyle(.gray)
+                        .padding(.vertical, 0.5)
+                    
+                    Text("$ \(product.price)")
+                        .fontWeight(.bold)
+                }
+                
+                Button {
+                    cartManager.addToCart(product)
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .foregroundStyle(Color("kPrimary"))
+                        .frame(width: 30, height: 30)
+                        .padding(.trailing)
+                }
+
+            }
+        }
+        .frame(width: 180, height: 250)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 
 #Preview {
-    ProductCardView()
+    ProductCardView(product: productList[0])
+        .environmentObject(CartManager())
 }
