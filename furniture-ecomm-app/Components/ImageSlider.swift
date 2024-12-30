@@ -12,7 +12,7 @@ struct ImageSlider: View {
     var slides: [String] = ["furn1","furn2","furn3","furn4","furn5","furn6","furn7"]
     
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
+        ZStack(alignment: .bottom) {
             ZStack(alignment: .trailing) {
                 Image(slides[currentIndex])
                     .resizable()
@@ -30,7 +30,6 @@ struct ImageSlider: View {
             }
             .padding()
         }
-        .padding()
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
                 if self.currentIndex+1 == self.slides.count {

@@ -1,5 +1,5 @@
 //
-//  ProductCardView.swift
+//  ProductCard.swift
 //  furniture-ecomm-app
 //
 //  Created by Sergio Herrera on 12/30/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProductCardView: View {
+struct ProductCard: View {
     @EnvironmentObject var cartManager: CartManager
     var product: Product
     
@@ -24,6 +24,7 @@ struct ProductCardView: View {
 
                     Text(product.name)
                         .font(.headline)
+                        .foregroundStyle(.black)
                         .padding(.vertical, 1.5)
                     
                     Text(product.supplier)
@@ -32,6 +33,7 @@ struct ProductCardView: View {
                         .padding(.vertical, 0.5)
                     
                     Text("$ \(product.price)")
+                        .foregroundStyle(.black)
                         .fontWeight(.bold)
                 }
                 
@@ -53,6 +55,6 @@ struct ProductCardView: View {
 }
 
 #Preview {
-    ProductCardView(product: productList[0])
+    ProductCard(product: productList[0])
         .environmentObject(CartManager())
 }

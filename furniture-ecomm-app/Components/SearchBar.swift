@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  SearchBar.swift
 //  furniture-ecomm-app
 //
 //  Created by Sergio Herrera on 12/30/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchView: View {
+struct SearchBar: View {
     @State private var text: String = ""
     
     var body: some View {
@@ -28,10 +28,9 @@ struct SearchView: View {
                 .background(Color("kPrimary"))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .padding(.horizontal)
     }
 }
 
 #Preview {
-    SearchView()
+    SearchBar()
 }
