@@ -32,6 +32,7 @@ enum Tab: String, CaseIterable {
 
 struct ContentView: View {
     @State var currentTab: Tab = .Home
+    @StateObject var cartManager = CartManager()
     
     init() {
         // hide default UI tab appearance
@@ -145,4 +146,5 @@ struct MaterialEffect: UIViewRepresentable {
 
 #Preview {
     ContentView()
+        .environmentObject(CartManager())
 }
