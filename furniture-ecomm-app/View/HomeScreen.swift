@@ -33,12 +33,11 @@ struct HomeScreen: View {
                     
                     ScrollView(.horizontal) {
                         HStack(spacing: 10) {
-                            ForEach(productList, id: \.id) { product in
+                            ForEach(productList) { product in
                                 NavigationLink {
                                     Text(product.name)
                                 } label: {
                                     ProductCard(product: product)
-                                        .environmentObject(cartManager)
                                 }
 
                             }
