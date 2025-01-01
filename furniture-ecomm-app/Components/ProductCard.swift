@@ -44,10 +44,10 @@ struct ProductCard: View {
                         .resizable()
                         .foregroundStyle(Color("kPrimary"))
                         .frame(width: 30, height: 30)
-                        .padding(.trailing)
+                        .padding(.trailing, 5)
                 }
-
             }
+            .padding(.bottom, 5)
         }
         .frame(width: 180, height: 250)
         .clipShape(RoundedRectangle(cornerRadius: 15))

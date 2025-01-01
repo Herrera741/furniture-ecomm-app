@@ -16,7 +16,8 @@ struct ImageSlider: View {
             ZStack(alignment: .trailing) {
                 Image(slides[currentIndex])
                     .resizable()
-                    .frame(width: .infinity, height: 180)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 180)
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 15))
             }
