@@ -38,6 +38,7 @@ struct HomeScreen: View {
                                     Text(product.name)
                                 } label: {
                                     ProductCard(product: product)
+                                        .environmentObject(cartManager)
                                 }
 
                             }
