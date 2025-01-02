@@ -27,6 +27,8 @@ struct CartView: View {
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding(.top, 30)
+                
+                ApplePayButton(buttonType: .checkout, action: {})
             } else {
                 Text("Your Cart is Empty")
             }
