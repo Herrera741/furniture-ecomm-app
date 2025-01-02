@@ -24,7 +24,7 @@ struct AppBar: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: Text("")) {
+                NavigationLink(destination: CartView().padding(.horizontal)) {
                     CartButton(numOfProducts: cartManager.products.count)
                 }
             }
