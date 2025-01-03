@@ -1,10 +1,3 @@
-//
-//  Product.swift
-//  furniture-ecomm-app
-//
-//  Created by Sergio Herrera on 12/29/24.
-//
-
 import Foundation
 
 struct Product: Identifiable {

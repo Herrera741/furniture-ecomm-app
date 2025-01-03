@@ -1,10 +1,3 @@
-//
-//  CartView.swift
-//  furniture-ecomm-app
-//
-//  Created by Sergio Herrera on 1/1/25.
-//
-
 import SwiftUI
 
 struct CartView: View {

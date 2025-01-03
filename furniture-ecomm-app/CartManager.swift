@@ -1,10 +1,3 @@
-//
-//  CartManager.swift
-//  furniture-ecomm-app
-//
-//  Created by Sergio Herrera on 12/30/24.
-//
-
 import Foundation
 
 class CartManager: ObservableObject {

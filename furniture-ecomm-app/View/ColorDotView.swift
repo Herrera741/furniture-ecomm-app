@@ -1,10 +1,3 @@
-//
-//  ColorDotView.swift
-//  furniture-ecomm-app
-//
-//  Created by Sergio Herrera on 1/2/25.
-//
-
 import SwiftUI
 
 struct ColorDotView: View {

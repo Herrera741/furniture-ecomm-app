@@ -1,10 +1,3 @@
-//
-//  ImageSlider.swift
-//  furniture-ecomm-app
-//
-//  Created by Sergio Herrera on 12/30/24.
-//
-
 import SwiftUI
 
 struct ImageSlider: View {

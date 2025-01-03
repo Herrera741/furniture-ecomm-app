@@ -1,10 +1,3 @@
-//
-//  CartButton.swift
-//  furniture-ecomm-app
-//
-//  Created by Sergio Herrera on 12/30/24.
-//
-
 import SwiftUI
 
 struct CartButton: View {
@@ -24,7 +17,6 @@ struct CartButton: View {
                     .background(.green)
                     .foregroundStyle(.white)
                     .clipShape(Circle())
-                    
             }
         }
     }
