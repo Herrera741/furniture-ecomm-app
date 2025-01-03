@@ -27,8 +27,12 @@ struct HomeScreen: View {
                         
                         Spacer()
                         
-                        Image(systemName: "circle.grid.2x2.fill")
-                            .foregroundStyle(Color("kPrimary"))
+                        NavigationLink {
+                            ProductsView()
+                        } label: {
+                            Image(systemName: "circle.grid.2x2.fill")
+                                .foregroundStyle(Color("kPrimary"))
+                        }
                     }
                     
                     ScrollView(.horizontal) {
@@ -39,7 +43,6 @@ struct HomeScreen: View {
                                 } label: {
                                     ProductCard(product: product)
                                 }
-
                             }
                         }
                     }
