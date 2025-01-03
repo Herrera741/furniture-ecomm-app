@@ -9,7 +9,11 @@ struct ProductsView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(productList) { product in
-                        ProductCard(product: product)
+                        NavigationLink {
+                            ProductDetailsView(product: product)
+                        } label: {
+                            ProductCard(product: product)
+                        }
                     }
                 }
             }
