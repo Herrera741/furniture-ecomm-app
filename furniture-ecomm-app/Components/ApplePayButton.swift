@@ -16,6 +16,7 @@ struct ApplePayButton: View {
         Representable(buttonType: buttonType, action: {})
             .padding(.top, 30)
             .frame(minWidth: 140, maxWidth: .infinity)
+            .frame(height: 55)
     }
 }
 
