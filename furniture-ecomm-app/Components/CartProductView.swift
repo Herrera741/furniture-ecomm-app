@@ -1,26 +1,51 @@
 import SwiftUI
 
 struct CartProductView: View {
-    var product: Product
+    @EnvironmentObject var cartManager: CartManager
+    var item: CartItem
     
     var body: some View {
         HStack {
-            Image(product.image)
+            Image(item.product.image)
                 .resizable()
-                .frame(width: 100, height: 55)
+                .frame(width: 100, height: 65)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
-            VStack(alignment: .leading, spacing: 5) {
-                Text(product.name)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(item.product.name)
                 
-                Text("$ \(product.price)")
-                    .fontWeight(.bold)
+                HStack {
+                    Text("Color: ")
+                    
+                    ColorDotView(color: Color(UIColor.systemCyan))
+                }
+                
+                Text("$ \(item.product.price)")
             }
+            .fontWeight(.semibold)
             
             Spacer()
             
-            Image(systemName: "trash")
-                .foregroundStyle(.red)
+            HStack(spacing: 0) {
+                Button {
+                    cartManager.removeFromCart(item.product)
+                } label: {
+                    Image(systemName: item.quantity == 1 ? "trash" : "minus.square")
+                }
+                .foregroundStyle(item.quantity == 1 ? .red : Color("kPrimary"))
+                
+                
+                Text("\(item.quantity)")
+                    .padding(.horizontal)
+                     
+                Button {
+                    cartManager.addToCart(item.product)
+                } label: {
+                    Image(systemName: "plus.square.fill")
+                }
+                .foregroundStyle(Color("kPrimary"))
+            }
+            .font(.title3)
         }
         .padding()
         .background(Color("kSecondary"))
@@ -30,5 +55,6 @@ struct CartProductView: View {
 }
 
 #Preview {
-    CartProductView(product: productList[0])
+    CartProductView(item: CartItem(product: productList[0], quantity: 10))
+        .environmentObject(CartManager())
 }

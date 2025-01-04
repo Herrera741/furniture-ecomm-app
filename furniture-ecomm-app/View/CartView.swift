@@ -5,9 +5,9 @@ struct CartView: View {
     
     var body: some View {
         ScrollView {
-            if cartManager.products.count > 0 {
-                ForEach(cartManager.products) { product in
-                    CartProductView(product: product)
+            if cartManager.items.count > 0 {
+                ForEach(cartManager.items) { item in
+                    CartProductView(item: item)
                 }
                 
                 HStack {
@@ -15,7 +15,7 @@ struct CartView: View {
                     
                     Spacer()
                     
-                    Text("$ \(cartManager.total)")
+                    Text("$ \(cartManager.totalPrice)")
                 }
                 .font(.title2)
                 .fontWeight(.semibold)

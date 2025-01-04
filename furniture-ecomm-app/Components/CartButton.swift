@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CartButton: View {
-    var numOfProducts: Int
+    var numItems: Int
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -9,8 +9,8 @@ struct CartButton: View {
                 .foregroundStyle(.black)
                 .padding(2)
             
-            if numOfProducts > 0 {
-                Text("\(numOfProducts)")
+            if numItems > 0 {
+                Text("\(numItems)")
                     .font(.caption2)
                     .frame(width: 10, height: 10)
                     .padding(1.5)
@@ -23,5 +23,5 @@ struct CartButton: View {
 }
 
 #Preview {
-    CartButton(numOfProducts: 1)
+    CartButton(numItems: 1)
 }

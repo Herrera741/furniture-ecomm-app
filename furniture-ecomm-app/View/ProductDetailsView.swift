@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProductDetailsView: View {
+    @EnvironmentObject var cartManager: CartManager
     var product: Product
     
     var body: some View {
@@ -134,4 +135,5 @@ struct ProductDetailsView: View {
 
 #Preview {
     ProductDetailsView(product: productList[0])
+        .environmentObject(CartManager())
 }
