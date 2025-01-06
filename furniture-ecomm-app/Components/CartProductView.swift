@@ -5,7 +5,7 @@ struct CartProductView: View {
     var item: CartItem
     
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom) {
             Image(item.product.image)
                 .resizable()
                 .frame(width: 100, height: 65)
@@ -26,26 +26,47 @@ struct CartProductView: View {
             
             Spacer()
             
-            HStack(spacing: 0) {
-                Button {
-                    cartManager.removeItemFromCart(for: item.product)
-                } label: {
-                    Image(systemName: item.quantity == 1 ? "trash" : "minus.square")
+            VStack(spacing: 10) {
+                HStack(spacing: 0) {
+                    Button {
+                        cartManager.removeItemFromCart(for: item.product)
+                    } label: {
+                        Image(systemName: item.quantity == 1 ? "trash" : "minus.square")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .foregroundStyle(item.quantity == 1 ? .red : Color("kPrimary"))
+                    
+                    
+                    Text("\(item.quantity)")
+                        .padding(.horizontal)
+                    
+                    Button {
+                        cartManager.addItemToCart(for: item.product)
+                    } label: {
+                        Image(systemName: "plus.square.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .foregroundStyle(Color("kPrimary"))
                 }
-                .foregroundStyle(item.quantity == 1 ? .red : Color("kPrimary"))
                 
-                
-                Text("\(item.quantity)")
-                    .padding(.horizontal)
-                     
-                Button {
-                    cartManager.addItemToCart(for: item.product)
-                } label: {
-                    Image(systemName: "plus.square.fill")
+                HStack(spacing: 5) {
+                    Button {
+                        // TODO: nav to product details view
+                    } label: {
+                        Text("Edit")
+                    }
+                    
+                    Text("|")
+
+                    Button {
+                        cartManager.removeAllOfProductFromCart(item.product)
+                    } label: {
+                        Text("Remove")
+                    }
                 }
-                .foregroundStyle(Color("kPrimary"))
             }
-            .font(.title3)
         }
         .padding()
         .background(Color("kSecondary"))

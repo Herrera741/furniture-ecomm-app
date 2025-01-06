@@ -31,7 +31,7 @@ struct ProductCard: View {
                 }
                 
                 Button {
-                    cartManager.addToCart(product)
+                    cartManager.addItemToCart(for: product)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()

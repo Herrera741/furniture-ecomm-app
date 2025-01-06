@@ -15,7 +15,7 @@ struct CartView: View {
                     
                     Spacer()
                     
-                    Text("$ \(cartManager.totalPrice)")
+                    Text("$ \(cartManager.totalPrice).00")
                 }
                 .font(.title2)
                 .fontWeight(.semibold)
