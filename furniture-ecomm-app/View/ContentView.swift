@@ -24,8 +24,8 @@ enum Tab: String, CaseIterable {
 }
 
 struct ContentView: View {
-    @State var currentTab: Tab = .Home
-    @StateObject var cartManager = CartManager()
+    @EnvironmentObject var cartManager: CartManager
+    @EnvironmentObject var tabState: TabState
     
     init() {
         // hide default UI tab appearance
@@ -36,7 +36,7 @@ struct ContentView: View {
     @Namespace var animation
     
     var body: some View {
-        TabView(selection: $currentTab) {
+        TabView(selection: $tabState.currentTab) {
             HomeScreen()
 
             Text("Search View")
@@ -65,10 +65,7 @@ struct ContentView: View {
                 .padding(.vertical)
                 .padding(.bottom, getSafeArea().bottom == 0 ? 5 : (getSafeArea().bottom - 15))
                 .background(Color("kSecondary"))
-            }
-            ,
-            alignment: .bottom
-        )
+            }, alignment: .bottom)
         .ignoresSafeArea(.all, edges: .bottom)
     }
     
@@ -76,11 +73,11 @@ struct ContentView: View {
         GeometryReader { proxy in
             Button {
                 withAnimation(.spring()) {
-                    currentTab = tab
+                    tabState.currentTab = tab
                 }
             } label: {
-                VStack(spacing: 0) {
-                    Image(systemName: currentTab == tab ? tab.rawValue + ".fill": tab.rawValue)
+                ZStack {
+                    Image(systemName: tabState.currentTab == tab ? tab.rawValue + ".fill": tab.rawValue)
                         .resizable()
                         .foregroundStyle(Color("kPrimary"))
                         .aspectRatio(contentMode: .fit)
@@ -88,7 +85,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity)
                         .background(
                             ZStack {
-                                if currentTab == tab {
+                                if tabState.currentTab == tab {
                                     MaterialEffect(style: .light)
                                         .clipShape(Circle())
                                         .matchedGeometryEffect(id: "Tab", in: animation)
@@ -100,12 +97,29 @@ struct ContentView: View {
                             }
                         )
                         .contentShape(Rectangle())
-                        .offset(y: currentTab == tab ? -15 : 0)
+                        .offset(y: tabState.currentTab == tab ? -15 : 0)
+                    
+                    if tab == .Cart && cartManager.totalItems > 0 {
+                        Text("\(cartManager.totalItems)")
+                            .font(.caption2)
+                            .frame(width: 15, height: 15)
+                            .padding(1.5)
+                            .background(.red)
+                            .foregroundStyle(.white)
+                            .clipShape(Circle())
+                            .offset(x: 10, y: tabState.currentTab == tab ? -25 : -10)
+                    }
                 }
             }
         }
         .frame(height: 25)
     }
+}
+
+#Preview {
+    ContentView()
+        .environmentObject(CartManager())
+        .environmentObject(TabState())
 }
 
 extension View {
@@ -134,9 +148,4 @@ struct MaterialEffect: UIViewRepresentable {
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         
     }
-}
-
-#Preview {
-    ContentView()
-        .environmentObject(CartManager())
 }

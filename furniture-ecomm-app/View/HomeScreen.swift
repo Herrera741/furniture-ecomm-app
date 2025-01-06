@@ -8,7 +8,7 @@ struct HomeScreen: View {
             ZStack(alignment: .top) {
                 Color.white.ignoresSafeArea(.all)
                 
-                VStack(spacing: 20) {
+                VStack(alignment: .leading, spacing: 20) {
                     AppBar()
                     SearchBar()
                     ImageSlider()
