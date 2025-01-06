@@ -2,6 +2,10 @@ import SwiftUI
 
 struct ProductDetailsView: View {
     @EnvironmentObject var cartManager: CartManager
+    @EnvironmentObject var tabState: TabState
+    @State private var quantity = 1
+    @State private var isAddedToCartSheetShowing = false
+    @State private var didTapViewCart = false
     var product: Product
     
     var body: some View {
@@ -57,22 +61,25 @@ struct ProductDetailsView: View {
                             
                             Spacer()
                             
-                            HStack {
+                            HStack(spacing: 15) {
                                 Button {
-                                    // TODO: do something
+                                    quantity -= 1
                                 } label: {
                                     Image(systemName: "minus.square")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                 }
-                                .foregroundStyle(Color("kPrimary"))
+                                .foregroundStyle(quantity == 1 ? Color(uiColor: .systemGray4) : Color("kPrimary"))
+                                .disabled(quantity == 1 ? true : false)
                                 
-                                
-                                Text("1")
-                                     
+                                Text("\(quantity)")
                                      
                                 Button {
-                                    // TODO: do something
+                                    quantity += 1
                                 } label: {
                                     Image(systemName: "plus.square.fill")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                 }
                                 .foregroundStyle(Color("kPrimary"))
                             }
@@ -80,6 +87,7 @@ struct ProductDetailsView: View {
                         
                         Text("Description")
                             .font(.title3)
+                            .fontWeight(.semibold)
                             .padding(.top, 10)
                         
                         Text(product.description)
@@ -119,7 +127,30 @@ struct ProductDetailsView: View {
                         }
                         .padding(.vertical)
                         
-                        ApplePayButton(buttonType: .buy, action: {})
+                        Button {
+                            cartManager.addItemToCart(for: product, quantity: quantity)
+                            isAddedToCartSheetShowing = true
+                        } label: {
+                            Text("Add to Cart")
+                                .foregroundStyle(.white)
+                                .fontWeight(.bold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 55)
+                        .background(Color("kPrimary"))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .disabled(false)
+                        .sheet(isPresented: $isAddedToCartSheetShowing, onDismiss: {
+                            if didTapViewCart {
+                                tabState.currentTab = .Cart
+                            }
+                        }, content: {
+                            AddedToCartSheet(isSheetShowing: $isAddedToCartSheetShowing,
+                                             didTapViewCart: $didTapViewCart,
+                                             product: product,
+                                             quantity: quantity)
+                                .presentationDetents([.medium, .fraction(0.5)])
+                        })
                     }
                     .padding()
                     .background(.white)
@@ -136,4 +167,5 @@ struct ProductDetailsView: View {
 #Preview {
     ProductDetailsView(product: productList[0])
         .environmentObject(CartManager())
+        .environmentObject(TabState())
 }
