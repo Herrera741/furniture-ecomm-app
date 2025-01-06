@@ -14,12 +14,6 @@ struct AppBar: View {
                 Text("Los Angeles, CA")
                     .font(.title3)
                     .foregroundStyle(.gray)
-                
-                Spacer()
-                
-                NavigationLink(destination: CartView().padding(.horizontal)) {
-                    CartButton(numItems: cartManager.totalItems)
-                }
             }
             
             Text("Find the Most \nLuxurious")
