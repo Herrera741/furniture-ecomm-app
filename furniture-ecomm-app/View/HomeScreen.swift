@@ -11,7 +11,7 @@ struct HomeScreen: View {
                 VStack(alignment: .leading, spacing: 20) {
                     AppBar()
                     SearchBar()
-                    ImageSlider()
+                    ProductsSlider()
                     
                     HStack {
                         Text("New Arrivals")

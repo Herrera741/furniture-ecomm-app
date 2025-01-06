@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct AppBar: View {
-    @EnvironmentObject var cartManager: CartManager
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -15,6 +13,7 @@ struct AppBar: View {
                     .font(.title3)
                     .foregroundStyle(.gray)
             }
+            .frame(maxWidth: .infinity, alignment: .topLeading)
             
             Text("Find the Most \nLuxurious")
                 .font(.title)
@@ -25,10 +24,10 @@ struct AppBar: View {
                 .fontWeight(.bold)
                 .foregroundStyle(Color("kPrimary"))
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
 #Preview {
     AppBar()
-        .environmentObject(CartManager())
 }

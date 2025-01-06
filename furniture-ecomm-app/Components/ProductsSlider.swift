@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct ImageSlider: View {
+struct ProductsSlider: View {
     @State private var currentIndex = 0
-    var slides: [String] = ["furn1","furn2","furn3","furn4","furn5","furn6","furn7"]
+    var slides: [Product] = productList
     
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .trailing) {
-                Image(slides[currentIndex])
+                Image(slides[currentIndex].image)
                     .resizable()
                     .frame(maxWidth: .infinity)
                     .frame(height: 180)
@@ -25,8 +25,8 @@ struct ImageSlider: View {
             .padding()
         }
         .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
-                if self.currentIndex+1 == self.slides.count {
+            Timer.scheduledTimer(withTimeInterval: 8, repeats: true) { timer in
+                if self.currentIndex + 1 == self.slides.count {
                     self.currentIndex = 0
                 } else {
                     self.currentIndex += 1
@@ -37,5 +37,5 @@ struct ImageSlider: View {
 }
 
 #Preview {
-    ImageSlider()
+    ProductsSlider()
 }
