@@ -11,18 +11,17 @@ class CartManager: ObservableObject {
     @Published var totalPrice: Int = 0
     @Published var totalItems: Int = 0
     
-    func addToCart(_ product: Product) {
+    func addItemToCart(for product: Product, quantity: Int = 1) {
         if let index = items.firstIndex(where: { $0.product.id == product.id }) {
-            items[index].quantity += 1
+            items[index].quantity += quantity
         } else {
-            items.append(CartItem(product: product, quantity: 1))
+            items.append(CartItem(product: product, quantity: quantity))
         }
         
-        calculateTotalItems()
-        calculateTotalPrice()
+        updateCartTotals()
     }
     
-    func removeFromCart(_ product: Product) {
+    func removeItemFromCart(for product: Product) {
         if let index = items.firstIndex(where: { $0.product.id == product.id }) {
             if items[index].quantity > 1 {
                 items[index].quantity -= 1
@@ -31,8 +30,12 @@ class CartManager: ObservableObject {
             }
         }
         
-        calculateTotalItems()
-        calculateTotalPrice()
+        updateCartTotals()
+    }
+    
+    func removeAllOfProductFromCart(_ product: Product) {
+        items.removeAll { $0.product.id == product.id }
+            updateCartTotals()
     }
     
     private func calculateTotalPrice() {
@@ -41,5 +44,10 @@ class CartManager: ObservableObject {
     
     private func calculateTotalItems() {
         totalItems = items.reduce(0) { $0 + $1.quantity }
+    }
+    
+    private func updateCartTotals() {
+        calculateTotalItems()
+        calculateTotalPrice()
     }
 }
