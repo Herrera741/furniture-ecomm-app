@@ -28,7 +28,7 @@ struct CartProductView: View {
             
             HStack(spacing: 0) {
                 Button {
-                    cartManager.removeFromCart(item.product)
+                    cartManager.removeItemFromCart(for: item.product)
                 } label: {
                     Image(systemName: item.quantity == 1 ? "trash" : "minus.square")
                 }
@@ -39,7 +39,7 @@ struct CartProductView: View {
                     .padding(.horizontal)
                      
                 Button {
-                    cartManager.addToCart(item.product)
+                    cartManager.addItemToCart(for: item.product)
                 } label: {
                     Image(systemName: "plus.square.fill")
                 }
