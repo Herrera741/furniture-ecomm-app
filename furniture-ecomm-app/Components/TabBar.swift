@@ -3,6 +3,7 @@ import SwiftUI
 struct TabBar: View {
     @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var tabState: TabState
+    @Environment(\.colorScheme) var colorScheme
     var animation: Namespace.ID
     
     var body: some View {
@@ -13,7 +14,7 @@ struct TabBar: View {
         }
         .padding(.vertical)
         .padding(.bottom, getSafeArea().bottom == 0 ? 5 : (getSafeArea().bottom - 15))
-        .background(Color("kSecondary"))
+        .background(Color.kSecondary(for: colorScheme))
     }
 }
 
@@ -22,6 +23,7 @@ struct TabButton: View {
     var animation: Namespace.ID
     @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var tabState: TabState
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Button {
@@ -35,7 +37,7 @@ struct TabButton: View {
                                   sideLength: 25)
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity)
-                .foregroundStyle(Color("kPrimary"))
+                .foregroundStyle(Color.kPrimary(for: colorScheme))
                 .background(
                     ZStack {
                         if tabState.currentTab == tab {
@@ -45,7 +47,7 @@ struct TabButton: View {
                             Text(tab.Tabname)
                                 .font(.footnote)
                                 .padding(.top, 50)
-                                .foregroundStyle(Color("kPrimary"))
+                                .foregroundStyle(Color.kPrimary(for: colorScheme))
                         }
                     }
                 )

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CartProductView: View {
     @EnvironmentObject var cartManager: CartManager
+    @Environment(\.colorScheme) var colorScheme
     var item: CartItem
     
     var body: some View {
@@ -13,6 +14,7 @@ struct CartProductView: View {
             
             VStack(alignment: .leading, spacing: 3) {
                 Text(item.product.name)
+                    .foregroundColor(Color.kText(for: colorScheme))
                 
                 HStack {
                     Text("Color: ")
@@ -21,6 +23,7 @@ struct CartProductView: View {
                 }
                 
                 Text("$ \(item.product.price)")
+                    .foregroundColor(Color.kText(for: colorScheme))
             }
             .fontWeight(.semibold)
             
@@ -33,7 +36,7 @@ struct CartProductView: View {
                     } label: {
                         CustomSystemImage(imageName: item.quantity == 1 ? "trash" : "minus.square",renderMode: .palette,
                                           sideLength: 20)
-                        .foregroundStyle(item.quantity == 1 ? .red : Color("kPrimary"))
+                        .foregroundStyle(item.quantity == 1 ? .red : Color.kPrimary(for: colorScheme))
                     }
                     
                     Text("\(item.quantity)")
@@ -44,7 +47,7 @@ struct CartProductView: View {
                         CustomSystemImage(imageName: "plus.square.fill",
                                           renderMode: .palette,
                                           sideLength: 20)
-                        .foregroundStyle(.white, Color("kPrimary"))
+                        .foregroundStyle(.white, Color.kPrimary(for: colorScheme))
                     }
                 }
                 
@@ -66,7 +69,7 @@ struct CartProductView: View {
             }
         }
         .padding()
-        .background(Color("kSecondary"))
+        .background(Color.kSecondary(for: colorScheme))
         .frame(maxWidth: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }

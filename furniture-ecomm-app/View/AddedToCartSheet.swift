@@ -18,6 +18,7 @@ struct AddedToCartSheet: View {
                     
                     VStack(alignment: .leading, spacing: 0) {
                         Text(product.name)
+                            .foregroundColor(Color.kText(for: .light))
                         
                         HStack {
                             Text("Color: ")
@@ -32,6 +33,7 @@ struct AddedToCartSheet: View {
                         Text("Qty: \(quantity)")
                     }
                     .fontWeight(.bold)
+                    .foregroundColor(Color.kText(for: .light))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.subheadline)
@@ -62,6 +64,7 @@ struct AddedToCartSheet: View {
                         Text("Added to Cart")
                             .font(.title3)
                             .fontWeight(.semibold)
+                            .foregroundColor(Color.kText(for: .light))
                     }
                 }
                 
@@ -72,11 +75,12 @@ struct AddedToCartSheet: View {
                         CustomSystemImage(imageName: "xmark.circle.fill",
                                           renderMode: .palette,
                                           sideLength: 25)
-                            .foregroundStyle(Color(uiColor: .darkGray), Color(uiColor: .systemGray5))
+                        .foregroundStyle(Color(uiColor: .darkGray), Color(uiColor: .systemGray5))
                     }
                 }
             }
         }
+        .background(Color.kBackground(for: .light))
     }
 }
 

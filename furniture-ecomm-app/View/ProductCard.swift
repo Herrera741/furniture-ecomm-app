@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct ProductCard: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var cartManager: CartManager
     var product: Product
     
     var body: some View {
         ZStack {
-            Color("kSecondary")
+            Color.kSecondary(for: colorScheme)
             
             ZStack(alignment: .bottomTrailing) {
                 VStack(alignment: .leading) {
@@ -17,16 +18,16 @@ struct ProductCard: View {
 
                     Text(product.name)
                         .font(.headline)
-                        .foregroundStyle(.black)
+                        .foregroundColor(Color.kText(for: colorScheme))
                         .padding(.vertical, 1.5)
                     
                     Text(product.supplier)
                         .font(.caption)
-                        .foregroundStyle(.gray)
+                        .foregroundColor(Color.kNeutral(for: colorScheme))
                         .padding(.vertical, 0.5)
                     
                     Text("$ \(product.price)")
-                        .foregroundStyle(.black)
+                        .foregroundColor(Color.kText(for: colorScheme))
                         .fontWeight(.bold)
                 }
                 
@@ -36,7 +37,7 @@ struct ProductCard: View {
                     CustomSystemImage(imageName: "plus.circle.fill",
                                       renderMode: .palette,
                                       sideLength: 30)
-                    .foregroundStyle(.white, Color("kPrimary"))
+                    .foregroundStyle(.white, Color.kPrimary(for: colorScheme))
                     .padding(.trailing, 5)
                 }
             }

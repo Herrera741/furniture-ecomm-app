@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct AppBar: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -9,7 +11,7 @@ struct AppBar: View {
                 
                 Text("Los Angeles, CA")
                     .font(.title3)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color.kText(for: colorScheme))
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             
@@ -20,7 +22,7 @@ struct AppBar: View {
             + Text(" Furniture")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundStyle(Color("kPrimary"))
+                .foregroundStyle(Color.kPrimary(for: colorScheme))
         }
         .frame(maxWidth: .infinity)
     }

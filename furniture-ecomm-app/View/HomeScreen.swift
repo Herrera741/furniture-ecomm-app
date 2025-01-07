@@ -2,11 +2,12 @@ import SwiftUI
 
 struct HomeScreen: View {
     @EnvironmentObject var cartManager: CartManager
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-                Color.white.ignoresSafeArea(.all)
+                Color.kPrimary(for: colorScheme).ignoresSafeArea(.all)
                 
                 VStack(alignment: .leading, spacing: 20) {
                     AppBar()
@@ -17,6 +18,7 @@ struct HomeScreen: View {
                         Text("New Arrivals")
                             .font(.title2)
                             .fontWeight(.semibold)
+                            .foregroundColor(Color.kText(for: colorScheme))
                         
                         Spacer()
                         
@@ -24,7 +26,7 @@ struct HomeScreen: View {
                             ProductsView()
                         } label: {
                             CustomSystemImage(imageName: "circle.grid.2x2.fill", sideLength: 20)
-                                .foregroundStyle(Color("kPrimary"))
+                                .foregroundStyle(Color.kPrimary(for: colorScheme))
                         }
                     }
                     

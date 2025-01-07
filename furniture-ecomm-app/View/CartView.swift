@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject var cartManager: CartManager
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         ScrollView {
@@ -12,10 +13,12 @@ struct CartView: View {
                 
                 HStack {
                     Text("Total")
+                        .foregroundStyle(Color.kText(for: .light))
                     
                     Spacer()
                     
                     Text("$ \(cartManager.totalPrice).00")
+                        .foregroundStyle(Color.kText(for: .light))
                 }
                 .font(.title2)
                 .fontWeight(.semibold)
@@ -24,9 +27,12 @@ struct CartView: View {
                 ApplePayButton(buttonType: .checkout, action: {})
             } else {
                 Text("Your Cart is Empty")
+                    .foregroundStyle(Color.kText(for: .light))
+                    .frame(maxWidth: .infinity)
             }
         }
         .navigationTitle("My Cart")
+        .background(Color.kBackground(for: .light))
     }
 }
 

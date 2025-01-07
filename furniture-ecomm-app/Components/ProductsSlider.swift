@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProductsSlider: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var currentIndex = 0
     var slides: [Product] = productList
     
@@ -18,7 +19,7 @@ struct ProductsSlider: View {
             HStack {
                 ForEach(slides.indices, id: \.self) { index in
                     Circle()
-                        .fill(self.currentIndex == index ? Color("kPrimary") : Color("kSecondary"))
+                        .fill(self.currentIndex == index ? Color.kPrimary(for: colorScheme) : Color.kSecondary(for: colorScheme))
                         .frame(width: 10, height: 10)
                 }
             }

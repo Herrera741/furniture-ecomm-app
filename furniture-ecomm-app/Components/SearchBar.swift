@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var text: String = ""
     
     var body: some View {
@@ -12,14 +13,14 @@ struct SearchBar: View {
                 TextField("Search", text: $text)
                     .padding()
             }
-            .background(Color("kSecondary"))
+            .background(Color.kSecondary(for: colorScheme))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
             CustomSystemImage(imageName: "camera", sideLength: 20)
                 .aspectRatio(contentMode: .fit)
                 .padding()
                 .foregroundStyle(.white)
-                .background(Color("kPrimary"))
+                .background(Color.kPrimary(for: colorScheme))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
         }
     }

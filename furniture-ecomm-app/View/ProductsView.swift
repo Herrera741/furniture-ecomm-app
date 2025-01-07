@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProductsView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var cartManager: CartManager
     var columns = [GridItem(.adaptive(minimum: 150), spacing: 15)]
     
@@ -18,6 +19,7 @@ struct ProductsView: View {
                 }
             }
             .padding()
+            .background(Color.kBackground(for: colorScheme))
         }
     }
 }

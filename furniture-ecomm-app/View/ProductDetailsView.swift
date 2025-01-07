@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProductDetailsView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var tabState: TabState
     @State private var quantity = 1
@@ -11,7 +12,7 @@ struct ProductDetailsView: View {
     var body: some View {
         ScrollView {
             ZStack {
-                Color.white
+                Color.kBackground(for: colorScheme)
                 
                 VStack(spacing: 20) {
                     ZStack(alignment: .topTrailing) {
@@ -35,12 +36,13 @@ struct ProductDetailsView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text(product.name)
+                            Color.kText(for: colorScheme)
                             
                             Spacer()
                             
                             Text("$ \(product.price).00")
                                 .padding(.horizontal)
-                                .background(Color("kSecondary"))
+                                .background(Color.kSecondary(for: colorScheme))
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
                         .font(.title2)
@@ -62,7 +64,7 @@ struct ProductDetailsView: View {
                                     quantity -= 1
                                 } label: {
                                     CustomSystemImage(imageName: "minus.square", renderMode: .palette, sideLength: 20)
-                                        .foregroundStyle(quantity == 1 ? Color(uiColor: .systemGray4) : Color("kPrimary"))
+                                        .foregroundStyle(quantity == 1 ? Color(uiColor: .systemGray4) : Color.kPrimary(for: colorScheme))
                                 }
                                 .disabled(quantity == 1 ? true : false)
                                 
@@ -74,7 +76,7 @@ struct ProductDetailsView: View {
                                     CustomSystemImage(imageName: "plus.square.fill",
                                                       renderMode: .palette,
                                                       sideLength: 20)
-                                    .foregroundStyle(.white, Color("kPrimary"))
+                                    .foregroundStyle(.white, Color.kPrimary(for: colorScheme))
                                 }
                                 
                             }
@@ -84,8 +86,10 @@ struct ProductDetailsView: View {
                             .font(.title3)
                             .fontWeight(.semibold)
                             .padding(.top, 10)
+                            .foregroundColor(Color.kText(for: colorScheme))
                         
                         Text(product.description)
+                            .foregroundColor(Color.kText(for: colorScheme))
                         
                         HStack(alignment: .top) {
                             VStack(alignment: .leading) {
@@ -141,14 +145,13 @@ struct ProductDetailsView: View {
                         })
                     }
                     .padding()
-                    .background(.white)
+                    .background(Color.kBackground(for: colorScheme))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .offset(y: -30)
-                    
                 }
             }
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(.all)
     }
 }
 
