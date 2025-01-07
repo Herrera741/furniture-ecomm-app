@@ -33,11 +33,11 @@ struct ProductCard: View {
                 Button {
                     cartManager.addItemToCart(for: product)
                 } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .foregroundStyle(Color("kPrimary"))
-                        .frame(width: 30, height: 30)
-                        .padding(.trailing, 5)
+                    CustomSystemImage(imageName: "plus.circle.fill",
+                                      renderMode: .palette,
+                                      sideLength: 30)
+                    .foregroundStyle(.white, Color("kPrimary"))
+                    .padding(.trailing, 5)
                 }
             }
             .padding(.bottom, 5)

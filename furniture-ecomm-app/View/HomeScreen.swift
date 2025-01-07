@@ -23,7 +23,7 @@ struct HomeScreen: View {
                         NavigationLink {
                             ProductsView()
                         } label: {
-                            Image(systemName: "circle.grid.2x2.fill")
+                            CustomSystemImage(imageName: "circle.grid.2x2.fill", sideLength: 20)
                                 .foregroundStyle(Color("kPrimary"))
                         }
                     }

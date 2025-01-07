@@ -30,25 +30,26 @@ struct TabButton: View {
             }
         } label: {
             ZStack {
-                Image(systemName: tabState.currentTab == tab ? tab.rawValue + ".fill" : tab.rawValue)
-                    .resizable()
-                    .foregroundStyle(Color("kPrimary"))
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 25, height: 25)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        ZStack {
-                            if tabState.currentTab == tab {
-                                MaterialEffect(style: .light)
-                                    .clipShape(Circle())
-                                    .matchedGeometryEffect(id: "Tab", in: animation)
-                                Text(tab.Tabname)
-                                    .font(.footnote)
-                                    .padding(.top, 50)
-                            }
+                CustomSystemImage(imageName: tabState.currentTab == tab ? tab.rawValue + ".fill" : tab.rawValue,
+                                  renderMode: .monochrome,
+                                  sideLength: 25)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity)
+                .foregroundStyle(Color("kPrimary"))
+                .background(
+                    ZStack {
+                        if tabState.currentTab == tab {
+                            MaterialEffect(style: .light)
+                                .clipShape(Circle())
+                                .matchedGeometryEffect(id: "Tab", in: animation)
+                            Text(tab.Tabname)
+                                .font(.footnote)
+                                .padding(.top, 50)
+                                .foregroundStyle(Color("kPrimary"))
                         }
-                    )
-                    .offset(y: tabState.currentTab == tab ? -15 : 0)
+                    }
+                )
+                .offset(y: tabState.currentTab == tab ? -15 : 0)
                 
                 if tab == .Cart && cartManager.totalItems > 0 {
                     Text("\(cartManager.totalItems)")

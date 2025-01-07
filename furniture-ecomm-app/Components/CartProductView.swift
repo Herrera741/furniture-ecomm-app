@@ -27,28 +27,25 @@ struct CartProductView: View {
             Spacer()
             
             VStack(spacing: 10) {
-                HStack(spacing: 0) {
+                HStack(spacing: 15) {
                     Button {
                         cartManager.removeItemFromCart(for: item.product)
                     } label: {
-                        Image(systemName: item.quantity == 1 ? "trash" : "minus.square")
-                            .resizable()
-                            .frame(width: 20, height: 20)
+                        CustomSystemImage(imageName: item.quantity == 1 ? "trash" : "minus.square",renderMode: .palette,
+                                          sideLength: 20)
+                        .foregroundStyle(item.quantity == 1 ? .red : Color("kPrimary"))
                     }
-                    .foregroundStyle(item.quantity == 1 ? .red : Color("kPrimary"))
-                    
                     
                     Text("\(item.quantity)")
-                        .padding(.horizontal)
                     
                     Button {
                         cartManager.addItemToCart(for: item.product)
                     } label: {
-                        Image(systemName: "plus.square.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
+                        CustomSystemImage(imageName: "plus.square.fill",
+                                          renderMode: .palette,
+                                          sideLength: 20)
+                        .foregroundStyle(.white, Color("kPrimary"))
                     }
-                    .foregroundStyle(Color("kPrimary"))
                 }
                 
                 HStack(spacing: 5) {

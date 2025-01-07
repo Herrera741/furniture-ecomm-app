@@ -37,32 +37,14 @@ struct AddedToCartSheet: View {
                 .font(.subheadline)
                 
                 VStack(spacing: 5) {
-                    Button {
+                    CustomButton(text: "Continue Shopping") {
                         isSheetShowing = false
-                    } label: {
-                        Text("Continue Shopping")
                     }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 55)
-                    .background(Color("kPrimary"))
-                    .foregroundStyle(.white)
-                    .fontWeight(.semibold)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
                     
-                    Button {
+                    CustomButton(text: "View Cart", isOutlined: true) {
                         didTapViewCart = true
                         isSheetShowing = false
-                    } label: {
-                        Text("View Cart")
                     }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 55)
-                    .foregroundStyle(Color("kPrimary"))
-                    .fontWeight(.semibold)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color("kPrimary"), lineWidth: 2)
-                    )
                 }
                 .padding(.top, 10)
             }
@@ -73,9 +55,7 @@ struct AddedToCartSheet: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Image(systemName: "checkmark")
-                            .resizable()
-                            .frame(width: 15, height: 15)
+                        CustomSystemImage(imageName: "checkmark", sideLength: 20)
                             .foregroundStyle(.green)
                             .fontWeight(.bold)
                         
@@ -89,11 +69,10 @@ struct AddedToCartSheet: View {
                     Button(action: {
                         isSheetShowing = false
                     }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .renderingMode(.template)
-                            .frame(width: 15, height: 15)
-                            .foregroundColor(Color(uiColor: .systemGray5))
-                            .background(Color(uiColor: .darkGray))
+                        CustomSystemImage(imageName: "xmark.circle.fill",
+                                          renderMode: .palette,
+                                          sideLength: 25)
+                            .foregroundStyle(Color(uiColor: .darkGray), Color(uiColor: .systemGray5))
                     }
                 }
             }

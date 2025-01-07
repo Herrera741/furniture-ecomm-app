@@ -6,7 +6,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "magnifyingglass")
+                CustomSystemImage(imageName: "magnifyingglass", sideLength: 20)
                     .padding(.leading)
                 
                 TextField("Search", text: $text)
@@ -15,7 +15,8 @@ struct SearchBar: View {
             .background(Color("kSecondary"))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
-            Image(systemName: "camera")
+            CustomSystemImage(imageName: "camera", sideLength: 20)
+                .aspectRatio(contentMode: .fit)
                 .padding()
                 .foregroundStyle(.white)
                 .background(Color("kPrimary"))

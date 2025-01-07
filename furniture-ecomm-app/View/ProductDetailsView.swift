@@ -23,12 +23,11 @@ struct ProductDetailsView: View {
                         Button {
                             // TODO: handle setting product as a favorite
                         } label: {
-                            Image(systemName: "heart.fill")
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                                .foregroundStyle(.red)
-                                .padding(.top, 50)
-                                .padding(.trailing, 30)
+                            CustomSystemImage(imageName: "heart.fill",
+                                              renderMode: .multicolor,
+                                              sideLength: 25)
+                            .padding(.top, 50)
+                            .padding(.trailing, 30)
                         }
 
                     }
@@ -50,10 +49,7 @@ struct ProductDetailsView: View {
                         
                         HStack {
                             ForEach(0..<5) { index in
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                                    .foregroundStyle(Color.yellow)
+                                CustomSystemImage(imageName: "star.fill", renderMode: .multicolor, sideLength: 20)
                             }
                             
                             Text("(4.5)")
@@ -65,11 +61,9 @@ struct ProductDetailsView: View {
                                 Button {
                                     quantity -= 1
                                 } label: {
-                                    Image(systemName: "minus.square")
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
+                                    CustomSystemImage(imageName: "minus.square", renderMode: .palette, sideLength: 20)
+                                        .foregroundStyle(quantity == 1 ? Color(uiColor: .systemGray4) : Color("kPrimary"))
                                 }
-                                .foregroundStyle(quantity == 1 ? Color(uiColor: .systemGray4) : Color("kPrimary"))
                                 .disabled(quantity == 1 ? true : false)
                                 
                                 Text("\(quantity)")
@@ -77,11 +71,12 @@ struct ProductDetailsView: View {
                                 Button {
                                     quantity += 1
                                 } label: {
-                                    Image(systemName: "plus.square.fill")
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
+                                    CustomSystemImage(imageName: "plus.square.fill",
+                                                      renderMode: .palette,
+                                                      sideLength: 20)
+                                    .foregroundStyle(.white, Color("kPrimary"))
                                 }
-                                .foregroundStyle(Color("kPrimary"))
+                                
                             }
                         }
                         
@@ -127,18 +122,10 @@ struct ProductDetailsView: View {
                         }
                         .padding(.vertical)
                         
-                        Button {
+                        CustomButton(text: "Add to Cart") {
                             cartManager.addItemToCart(for: product, quantity: quantity)
                             isAddedToCartSheetShowing = true
-                        } label: {
-                            Text("Add to Cart")
-                                .foregroundStyle(.white)
-                                .fontWeight(.bold)
                         }
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 55)
-                        .background(Color("kPrimary"))
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
                         .disabled(false)
                         .sheet(isPresented: $isAddedToCartSheetShowing, onDismiss: {
                             if didTapViewCart {
@@ -150,6 +137,7 @@ struct ProductDetailsView: View {
                                              product: product,
                                              quantity: quantity)
                                 .presentationDetents([.medium, .fraction(0.5)])
+                                .padding(.top, 20)
                         })
                     }
                     .padding()

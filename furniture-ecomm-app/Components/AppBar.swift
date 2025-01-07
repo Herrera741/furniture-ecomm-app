@@ -4,9 +4,7 @@ struct AppBar: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "location.north.fill")
-                    .resizable()
-                    .frame(width: 15, height: 15)
+                CustomSystemImage(imageName: "location.north.fill", sideLength: 15)
                     .padding(.trailing)
                 
                 Text("Los Angeles, CA")
