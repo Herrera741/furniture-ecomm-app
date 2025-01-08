@@ -11,7 +11,8 @@ struct AppBar: View {
                 
                 Text("Los Angeles, CA")
                     .font(.title3)
-                    .foregroundStyle(Color.kText(for: colorScheme))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.charcoal)
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             

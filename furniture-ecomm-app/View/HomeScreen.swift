@@ -7,7 +7,7 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-                Color.kPrimary(for: colorScheme).ignoresSafeArea(.all)
+                Color.kBackground(for: colorScheme).ignoresSafeArea(.all)
                 
                 VStack(alignment: .leading, spacing: 20) {
                     AppBar()
