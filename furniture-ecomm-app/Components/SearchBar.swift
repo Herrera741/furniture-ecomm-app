@@ -9,10 +9,12 @@ struct SearchBar: View {
             HStack {
                 CustomSystemImage(imageName: "magnifyingglass", sideLength: 20)
                     .padding(.leading)
+                    .foregroundStyle(Color.darkNeutralGray)
                 
                 TextField("Search", text: $text)
                     .padding()
             }
+            .background(.aliceBlue)
             .background(Color.kSecondary(for: colorScheme))
             .clipShape(RoundedRectangle(cornerRadius: 10))
             

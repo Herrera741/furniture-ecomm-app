@@ -7,44 +7,51 @@ struct ProductCard: View {
     
     var body: some View {
         ZStack {
-            Color.kSecondary(for: colorScheme)
+            Color.kSecondary(for: colorScheme).opacity(0.75)
             
-            ZStack(alignment: .bottomTrailing) {
-                VStack(alignment: .leading) {
-                    Image(product.image)
-                        .resizable()
-                        .frame(width: 170, height: 160)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-
-                    Text(product.name)
-                        .font(.headline)
-                        .foregroundColor(Color.kText(for: colorScheme))
-                        .padding(.vertical, 1.5)
-                    
-                    Text(product.supplier)
-                        .font(.caption)
-                        .foregroundColor(Color.kNeutral(for: colorScheme))
-                        .padding(.vertical, 0.5)
-                    
-                    Text("$ \(product.price)")
-                        .foregroundColor(Color.kText(for: colorScheme))
-                        .fontWeight(.bold)
-                }
+            VStack(alignment: .leading) {
+                Image(product.image)
+                    .resizable()
+                    .frame(height: 150)
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                 
-                Button {
-                    cartManager.addItemToCart(for: product)
-                } label: {
-                    CustomSystemImage(imageName: "plus.circle.fill",
-                                      renderMode: .palette,
-                                      sideLength: 30)
-                    .foregroundStyle(.white, Color.kPrimary(for: colorScheme))
-                    .padding(.trailing, 5)
+                Spacer()
+                
+                HStack(alignment: .bottom) {
+                    VStack(alignment: .leading) {
+                        Text(product.name)
+                            .font(.headline)
+                            .foregroundColor(Color.kText(for: colorScheme))
+                        
+                        Text(product.supplier)
+                            .font(.caption)
+                            .foregroundColor(Color.kNeutral(for: colorScheme))
+                        
+                        Text("$ \(product.price)")
+                            .foregroundColor(Color.kText(for: colorScheme))
+                            .fontWeight(.bold)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    VStack(alignment: .trailing) {
+                        Button {
+                            cartManager.addItemToCart(for: product)
+                        } label: {
+                            CustomSystemImage(imageName: "plus.circle.fill",
+                                              renderMode: .palette,
+                                              sideLength: 30)
+                            .foregroundStyle(.white, Color.kPrimary(for: colorScheme))
+                        }
+                    }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .padding(.bottom, 5)
+            .padding(.horizontal, 10)
+            .padding(.top, 10)
         }
-        .frame(width: 180, height: 250)
-        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .frame(width: 175, height: 250)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 
