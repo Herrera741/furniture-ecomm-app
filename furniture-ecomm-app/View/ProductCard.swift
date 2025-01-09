@@ -22,16 +22,16 @@ struct ProductCard: View {
                     VStack(alignment: .leading) {
                         Text(product.name)
                             .font(.headline)
-                            .foregroundColor(Color.kText(for: colorScheme))
                         
                         Text(product.supplier)
                             .font(.caption)
-                            .foregroundColor(Color.kNeutral(for: colorScheme))
+                            .foregroundColor(colorScheme == .light  ? .darkNeutralGray : .aliceBlue)
                         
                         Text("$ \(product.price)")
                             .foregroundColor(Color.kText(for: colorScheme))
                             .fontWeight(.bold)
                     }
+                    .foregroundColor(Color.kText(for: colorScheme))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     VStack(alignment: .trailing) {

@@ -19,7 +19,7 @@ struct ProductsSlider: View {
             HStack {
                 ForEach(slides.indices, id: \.self) { index in
                     Circle()
-                        .fill(self.currentIndex == index ? Color.kPrimary(for: colorScheme) : Color.kSecondary(for: colorScheme))
+                        .fill(self.currentIndex == index ? .rust : .ivory)
                         .frame(width: 10, height: 10)
                 }
             }

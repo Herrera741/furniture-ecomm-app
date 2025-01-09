@@ -8,11 +8,12 @@ struct AppBar: View {
             HStack {
                 CustomSystemImage(imageName: "location.north.fill", sideLength: 15)
                     .padding(.trailing)
+                    .foregroundStyle(colorScheme == .light ? .jetBlack : .accentColor)
                 
                 Text("Los Angeles, CA")
                     .font(.title3)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.charcoal)
+                    .foregroundStyle(Color.kText(for: colorScheme))
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             

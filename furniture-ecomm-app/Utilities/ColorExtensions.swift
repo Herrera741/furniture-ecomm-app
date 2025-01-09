@@ -2,26 +2,42 @@ import SwiftUI
 
 extension Color {
     static func kPrimary(for colorScheme: ColorScheme) -> Color {
-        return colorScheme == .dark ? Color("peru") : Color("saddleBrown")
+        return colorScheme == .light ? .saddleBrown : .peru
     }
     
     static func kSecondary(for colorScheme: ColorScheme) -> Color {
-        return colorScheme == .dark ? Color("saddleBrown") : Color("sandyBrown")
+        return colorScheme == .light ? .sandyBrown : .saddleBrown
     }
 
     static func kAccent(for colorScheme: ColorScheme) -> Color {
-        return colorScheme == .dark ? Color("skyBlue") : Color("steelBlue")
+        return colorScheme == .light ? .steelBlue : .skyBlue
+    }
+    
+    static func kLightAccent(for colorScheme: ColorScheme) -> Color {
+        return colorScheme == .light ? .aliceBlue : .darkSlateBlue
     }
     
     static func kBackground(for colorScheme: ColorScheme) -> Color {
-        return colorScheme == .dark ? Color("offBlack") : Color("ivory")
+        return colorScheme == .light ? .ivory : .offBlack
     }
 
     static func kText(for colorScheme: ColorScheme) -> Color {
-        return colorScheme == .dark ? Color("almostWhite") : Color("charcoal")
+        return colorScheme == .light ? .charcoal : .almostWhite
     }
     
     static func kNeutral(for colorScheme: ColorScheme) -> Color {
-        return colorScheme == .dark ? Color("darkNeutralGray") : Color("gainsboroGray")
+        return colorScheme == .light ? .gainsboroGray : .darkNeutralGray
+    }
+    
+    static func kIconNeutral(for colorScheme: ColorScheme) -> Color {
+        return colorScheme == .light ? .darkNeutralGray : .gray
+    }
+    
+    static func kActiveTint(for colorScheme: ColorScheme) -> Color {
+        return colorScheme == .light ? .rust : .burntOrange
+    }
+    
+    static func kTabBarBackground(for colorScheme: ColorScheme) -> Color {
+        return colorScheme == .light ? .mutedCharcoal : .jetBlack
     }
 }
