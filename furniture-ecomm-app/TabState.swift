@@ -1,28 +1,28 @@
 import Foundation
 
 class TabState: ObservableObject {
-    @Published var currentTab: Tab = .Home
+    @Published var currentTab: Tab = .home
 }
 
 enum Tab: String, CaseIterable {
-    case Home = "house"
-    case Search = "magnifyingglass.circle"
-    case Notifications = "bell"
-    case Cart = "bag"
-    case Profile = "person"
+    case home = "Home"
+    case notifications = "Notifications"
+    case cart = "Cart"
+    case favorites = "Favorites"
+    case profile = "Profile"
     
-    var Tabname: String {
+    var imageName: String {
         switch self {
-        case .Home:
-            return "Home"
-        case .Search:
-            return "Search"
-        case .Notifications:
-            return "Notifications"
-        case .Cart:
-            return "Cart"
-        case .Profile:
-            return "Profile"
+        case .home:
+            return "house"
+        case .notifications:
+            return "bell"
+        case .favorites:
+            return "heart"
+        case .cart:
+            return "cart"
+        case .profile:
+            return "person"
         }
     }
 }

@@ -1,43 +1,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var tabState: TabState
-    
-    init() {
-        // hide default UI tab appearance
-        UITabBar.appearance().isHidden = true
-    }
-    
-    // coordinated animation involving matched geo effects; used for smooth transitions between diff layouts or views
     @Namespace var animation
     
     var body: some View {
         TabView(selection: $tabState.currentTab) {
             HomeScreen()
-
-            Text("Search View")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background()
-                .tag(Tab.Search)
+            
             Text("Notifications View")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
-                .tag(Tab.Notifications)
+                .tag(Tab.notifications)
+            
+            Text("Favorites View")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background()
+                .tag(Tab.favorites)
             
             CartView()
-                .padding(.horizontal)
-                .tag(Tab.Cart)
+                .tag(Tab.cart)
             
             Text("Profile View")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
-                .tag(Tab.Profile)
+                .tag(Tab.profile)
         }
         .overlay(
             VStack {
                 Spacer()
-                TabBar(animation: animation)
+                TabBar()
             }
         )
         .ignoresSafeArea(.all, edges: .bottom)
@@ -46,6 +38,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(CartManager())
         .environmentObject(TabState())
 }

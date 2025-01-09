@@ -133,7 +133,7 @@ struct ProductDetailsView: View {
                         .disabled(false)
                         .sheet(isPresented: $isAddedToCartSheetShowing, onDismiss: {
                             if didTapViewCart {
-                                tabState.currentTab = .Cart
+                                tabState.currentTab = .cart
                             }
                         }, content: {
                             AddedToCartSheet(isSheetShowing: $isAddedToCartSheetShowing,

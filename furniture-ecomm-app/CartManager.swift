@@ -10,8 +10,11 @@ class CartManager: ObservableObject {
     @Published private(set) var items: [CartItem] = []
     @Published var totalPrice: Int = 0
     @Published var totalItems: Int = 0
+    let MAX_ITEMS = 50
     
     func addItemToCart(for product: Product, quantity: Int = 1) {
+        guard quantity <= MAX_ITEMS else { return }
+        
         if let index = items.firstIndex(where: { $0.product.id == product.id }) {
             items[index].quantity += quantity
         } else {
