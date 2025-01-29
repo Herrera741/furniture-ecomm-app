@@ -15,7 +15,7 @@ struct TabBar: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .padding(.vertical, 20)
+        .padding(.vertical, 25)
         .background(Color.kTabBarBackground(for: colorScheme))
         .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.8, blendDuration: 0.9), value: tabState.currentTab)
     }

@@ -5,7 +5,7 @@ struct ColorDotView: View {
     
     var body: some View {
         color
-            .frame(width: 25, height: 25)
+            .frame(width: 35, height: 35)
             .clipShape(Circle())
     }
 }

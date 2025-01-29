@@ -10,6 +10,7 @@ struct furniture_ecomm_appApp: App {
             ContentView()
                 .environmentObject(cartManager)
                 .environmentObject(tabState)
+                .environment(\.screenWidth, ScreenWidthKey.defaultValue)
         }
     }
 }
