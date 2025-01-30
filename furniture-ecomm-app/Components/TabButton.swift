@@ -24,7 +24,8 @@ struct TabButton: View {
                             Circle()
                                 .fill(Color.kActiveTint(for: colorScheme))
                                 .frame(width: 55, height: 55)
-                                .offset(y: -1)
+                                .offset(x: tab == .cart ? 3 : 0,
+                                        y: -1)
                                 .matchedGeometryEffect(id: "activeTab", in: animation)
                         }
                     }
