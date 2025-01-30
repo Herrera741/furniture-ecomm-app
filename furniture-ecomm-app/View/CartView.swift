@@ -6,33 +6,41 @@ struct CartView: View {
     
     var body: some View {
         ScrollView {
-            if cartManager.items.count > 0 {
-                ForEach(cartManager.items) { item in
-                    CartProductView(item: item)
-                }
-                
-                HStack {
-                    Text("Total")
-                        .foregroundStyle(Color.kText(for: .light))
+            VStack {
+                if cartManager.items.count > 0 {
+                    ForEach(cartManager.items) { item in
+                        CartProductView(item: item)
+                        
+                        if colorScheme == .light {
+                            Divider()
+                        }
+                    }
                     
-                    Spacer()
+                    HStack {
+                        Text("Total")
+                        
+                        Spacer()
+                        
+                        Text("$ \(cartManager.totalPrice).00")
+                    }
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.kText(for: colorScheme))
+                    .padding(.top, 20)
+                    .padding(.bottom, 30)
                     
-                    Text("$ \(cartManager.totalPrice).00")
+                    ApplePayButton(buttonType: .checkout, action: {})
+                } else {
+                    Text("Cart is Empty")
                         .foregroundStyle(Color.kText(for: .light))
+                        .frame(maxWidth: .infinity)
                 }
-                .font(.title2)
-                .fontWeight(.semibold)
-                .padding(.top, 30)
-                
-                ApplePayButton(buttonType: .checkout, action: {})
-            } else {
-                Text("Your Cart is Empty")
-                    .foregroundStyle(Color.kText(for: .light))
-                    .frame(maxWidth: .infinity)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 20)
         }
         .navigationTitle("My Cart")
-        .background(Color.kBackground(for: .light))
+        .background(Color.kBackground(for: colorScheme))
     }
 }
 

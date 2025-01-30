@@ -22,7 +22,9 @@ struct AddedToCartSheet: View {
                         
                         HStack {
                             Text("Color: ")
-                            ColorDotView(color: Color(UIColor.systemCyan))
+                            ColorDotView(color: Color(UIColor.systemCyan),
+                                         isSelected: false,
+                                         forCartView: false)
                         }
                     }
                     

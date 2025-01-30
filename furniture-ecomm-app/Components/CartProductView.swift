@@ -9,7 +9,7 @@ struct CartProductView: View {
         HStack(alignment: .bottom) {
             Image(item.product.image)
                 .resizable()
-                .frame(width: 100, height: 65)
+                .frame(width: 100, height: 80)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
             VStack(alignment: .leading, spacing: 3) {
@@ -19,7 +19,9 @@ struct CartProductView: View {
                 HStack {
                     Text("Color: ")
                     
-                    ColorDotView(color: Color(UIColor.systemCyan))
+                    ColorDotView(color: Color(UIColor.systemCyan),
+                                 isSelected: true,
+                                 forCartView: true)
                 }
                 
                 Text("$ \(item.product.price)")
@@ -69,7 +71,7 @@ struct CartProductView: View {
             }
         }
         .padding()
-        .background(Color.kSecondary(for: colorScheme))
+        .background(colorScheme == .light ? .ivory : .darkNeutralGray)
         .frame(maxWidth: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }

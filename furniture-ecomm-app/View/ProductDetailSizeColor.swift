@@ -3,6 +3,7 @@ import SwiftUI
 struct ProductDetailSizeColor: View {
     @Environment(\.colorScheme) var colorScheme
     @Binding var selectedSize: Int
+    @State var selectedColor = 1
     
     var body: some View {
         HStack(alignment: .top) {
@@ -49,9 +50,29 @@ struct ProductDetailSizeColor: View {
                     .foregroundStyle(Color.kText(for: colorScheme))
                 
                 HStack {
-                    ColorDotView(color: .skyBlue)
-                    ColorDotView(color: .gainsboroGray)
-                    ColorDotView(color: .charcoal)
+                    Button {
+                        selectedColor = 1
+                    } label: {
+                        ColorDotView(color: .skyBlue,
+                                     isSelected: selectedColor == 1 ? true : false,
+                                     forCartView: false)
+                    }
+
+                    Button {
+                        selectedColor = 2
+                    } label: {
+                        ColorDotView(color: .gainsboroGray,
+                                     isSelected: selectedColor == 2 ? true : false,
+                                     forCartView: false)
+                    }
+                    
+                    Button {
+                        selectedColor = 3
+                    } label: {
+                        ColorDotView(color: .charcoal,
+                                     isSelected: selectedColor == 3 ? true : false,
+                                     forCartView: false)
+                    }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
