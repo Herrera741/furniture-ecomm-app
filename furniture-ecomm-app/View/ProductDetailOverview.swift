@@ -27,7 +27,6 @@ struct ProductDetailOverview: View {
                 } label: {
                     Image(systemName: "chevron.right")
                 }
-                .foregroundStyle(.jetBlack)
                 .padding(.trailing, 10)
             }
             
@@ -50,7 +49,6 @@ struct ProductDetailOverview: View {
                 } label: {
                     Image(systemName: "chevron.right")
                 }
-                .foregroundStyle(.jetBlack)
                 .padding(.trailing, 10)
             }
             
@@ -62,7 +60,7 @@ struct ProductDetailOverview: View {
                 
                 ForEach(0..<5) { index in
                     CustomSystemImage(imageName: "star.fill", renderMode: .monochrome, sideLength: 15)
-                        .foregroundStyle(colorScheme == .light ? .jetBlack : .almostWhite)
+                        .foregroundStyle(Color.kText(for: colorScheme))
                 }
                 
                 Text("(4.5)")
@@ -81,14 +79,13 @@ struct ProductDetailOverview: View {
                 } label: {
                     Image(systemName: "chevron.right")
                 }
-                .foregroundStyle(.jetBlack)
                 .padding(.trailing, 10)
             }
-            .foregroundStyle(Color.kText(for: colorScheme))
             
             Divider()
                 .padding(.vertical, 10)
         }
+        .foregroundStyle(Color.kText(for: colorScheme))
     }
 }
 

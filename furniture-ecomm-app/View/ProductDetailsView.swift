@@ -33,6 +33,18 @@ struct ProductDetailsView: View {
                         .padding(.vertical, 10)
                     
                     ProductDetailOverview(product: product)
+                    
+                    Button(action: {
+                        cartManager.addItemToCart(for: product, quantity: quantity)
+                    }) {
+                        Text("Add \(quantity) to Cart")
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 100)
@@ -60,11 +72,8 @@ struct ProductDetailsView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .bottom)
                 .padding(.all, 20)
-                .background(
-                    Color.gainsboroGray
-                        .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: -2)
-                )
-            } // end VStack
+                .background(Color.kTabBarBackground(for: colorScheme))
+            }
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -87,9 +96,7 @@ struct ProductDetailsView: View {
                                           renderMode: .palette,
                                           sideLength: 25)
                         .scaledToFit()
-                        .foregroundStyle(
-                            isFavorite ? (colorScheme == .light ? .jetBlack : .rust) : (colorScheme == .light ? .clear : .jetBlack)
-                        )
+                        .foregroundStyle(isFavorite ? .rust : .clear)
                         
                         CustomSystemImage(imageName: "heart",
                                           renderMode: .palette,
@@ -104,81 +111,6 @@ struct ProductDetailsView: View {
         }
     }
 }
-            
-//            VStack {
-//                Spacer()
-//                
-//                HStack(spacing: 20) {
-//                    // Add to Cart button
-//                    Button(action: {
-//                        cartManager.addItemToCart(for: product)
-//                    }) {
-//                        Text("Add to Cart")
-//                            .fontWeight(.bold)
-//                            .frame(maxWidth: .infinity)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(8)
-//                    }
-//                    
-//                    // Buy with Apple Pay button
-//                    Button(action: {
-//                        // Trigger Apple Pay logic here
-//                    }) {
-//                        HStack {
-//                            Image(systemName: "applelogo")
-//                            Text("Pay")
-//                        }
-//                        .fontWeight(.bold)
-//                        .frame(maxWidth: .infinity)
-//                        .padding()
-//                        .background(Color.black)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(8)
-//                    }
-//                }
-//                .frame(maxWidth: .infinity, maxHeight: 80, alignment: .bottom)
-//                .padding(.all, 10)
-//                .background(
-//                    Color.gainsboroGray
-//                        .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: -2)
-//                )
-//            } // end VStack
-
-
-
-
-
-
-//                        CustomButton(text: "Add to Cart") {
-//                            cartManager.addItemToCart(for: product, quantity: quantity)
-//                            isAddedToCartSheetShowing = true
-//                        }
-//                        .disabled(false)
-//                        .sheet(isPresented: $isAddedToCartSheetShowing, onDismiss: {
-//                            if didTapViewCart {
-//                                tabState.currentTab = .cart
-//                            }
-//                        }, content: {
-//                            AddedToCartSheet(isSheetShowing: $isAddedToCartSheetShowing,
-//                                             didTapViewCart: $didTapViewCart,
-//                                             product: product,
-//                                             quantity: quantity)
-//                                .presentationDetents([.medium, .fraction(0.5)])
-//                                .padding(.top, 20)
-//                        })
-//                    }
-//                    .padding()
-//                    .background(Color.kBackground(for: colorScheme))
-//                    .clipShape(RoundedRectangle(cornerRadius: 20))
-//                    .offset(y: -30)
-//                }
-//            }
-//        }
-//        .ignoresSafeArea(.all)
-//    }
-//}
 
 #Preview {
     NavigationStack {
